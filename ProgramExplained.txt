@@ -1,0 +1,50 @@
+//Sean Staz
+//CSci_423
+//Programming Assignment 2
+//10/16/2014
+
+CSCI423 Programming Assignment 2
+|
+|
+|
+Assignment Details:
+
+Write a multithreaded program that calculates various statistical values for a list of numbers.
+This program will be passed a series of numbers on the command line and will then create three separate worker threads. 
+One thread will determine the average of the numbers, the second will determine the maximum value, and the third will determine the minimum value.
+For example, suppose your program is passed the following integers as input (assuming a.out is your program):
+
+a.out 90 81 78 95 79 72 85
+
+The program will report:
+
+The average value is 82
+The minimum value is 72
+The maximum value is 95
+
+The variables representing the average, minimum, and maximum values will be stored globally. 
+The worker threads will set these values, and the parent thread will output the values once the workers have exited.
+
+NOTE: Your program should be able to accept arbitrary number of numbers as input.
+
+Programmer-to-User Instructions:
+
+pthreads.c: This is the C program for the multithreaded program.
+pthreads: This file is the compiled file for pthreads.c.
+
+Program Discription:    See assignment details at top of page...
+
+Program Notes:          The child process will output the sequence of numbers generated from the algorithm specified by the Collatz conjecture. 
+                        This works because the parent and child processes have their own copies of the data. 
+                        
+                        The program perfoms fork(), then enters into a if loop and if pid == 1 (if it is busy) then it 
+                        waits till it equals 0 (not busy). When it is 0 then it can perform the calculations. It checks
+                        to see if it is even or odd and performs the appropriate equation. This repeats until it reaches
+                        one, then it breaks out of the loop.
+                
+To start the program:   To run the assignment go to the terminal and find the directory that contains
+                        the compiled pthreads file. To run the pthreads program, type <./pthreads> <(int) arguments with spaces between them> //without <> //refer to assignment details at top of page.
+
+Using the program:      The program immediately responds with calculations after it is ran and given its arguments.
+                        
+ENJOY THE paheeThreadz PROGRAM!!!
